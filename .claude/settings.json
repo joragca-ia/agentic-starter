@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(memory/**)",
+      "Read(directives/**)",
+      "Read(skills/**)",
+      "Read(agents/**)",
+      "Read(.tmp/**)",
+      "Write(memory/**)",
+      "Write(directives/**)",
+      "Write(skills/**)",
+      "Write(agents/**)",
+      "Write(.tmp/**)",
+      "Edit(memory/**)",
+      "Edit(directives/**)",
+      "Edit(skills/**)",
+      "Edit(agents/**)",
+      "Edit(.tmp/**)",
+      "Write(AGENT.md)",
+      "Write(IDENTITY.md)",
+      "Write(SOUL.md)",
+      "Write(TOOLS.md)",
+      "Write(MEMORY.md)",
+      "Write(AGENTTEAM.md)",
+      "Write(HEARTBEAT.md)",
+      "Edit(AGENT.md)",
+      "Edit(IDENTITY.md)",
+      "Edit(SOUL.md)",
+      "Edit(TOOLS.md)",
+      "Edit(MEMORY.md)",
+      "Edit(AGENTTEAM.md)",
+      "Edit(HEARTBEAT.md)",
+      "Edit(CLAUDE.md)",
+      "Edit(AGENTS.md)",
+      "Edit(GEMINI.md)"
+    ]
+  }
+}
