@@ -1,6 +1,6 @@
 # Herramientas del proyecto
 
-> Rellenado automáticamente durante el proceso de inicialización (STARTUP.md, Paso 3).
+> Se rellena durante el setup (con los materiales del Paso 2 y el flujo del Paso 4) y se completa progresivamente a medida que aparecen herramientas trabajando.
 > Actualizar cuando se añadan o cambien herramientas.
 
 ---

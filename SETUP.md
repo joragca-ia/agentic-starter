@@ -24,28 +24,29 @@ No necesitas saber programar. Todo funciona desde el chat.
 
 > Lo importante es que el asistente tenga acceso de lectura y escritura a esta carpeta: necesita poder crear y editar los archivos de configuración.
 
-**Paso 2.** Escribe en el chat:
+**Paso 2.** Escribe en el chat el prompt que corresponda a tu caso:
 
+**Si es un proyecto nuevo** (carpeta vacía o solo con los archivos de esta plantilla):
 ```
 inicializa el proyecto
 ```
 
-**Paso 3.** El agente te hará preguntas durante 5-10 minutos. Responde con tranquilidad: cuanto más cuentes, mejor se configurará el sistema.
+**Si ya tienes un proyecto en marcha** (carpeta con archivos tuyos, código, documentos, etc.):
+```
+Tengo un proyecto existente en esta carpeta. Aplica el sistema de agente encima de lo que ya hay: no sobreescribas ningún archivo mío, adapta la configuración a lo que encuentres, y cuando acabes marca el sistema como inicializado en MEMORY.md. Sigue el protocolo de STARTUP.md adaptado a este contexto.
+```
+
+**Paso 3.** El setup dura menos de 10 minutos y termina con tu primer flujo de trabajo funcionando.
 
 ---
 
 ## Qué va a pasar durante el setup
 
-El agente te preguntará sobre:
-1. Quién eres y a qué te dedicas
-2. Para qué quieres este sistema
-3. Qué herramientas usas en tu trabajo
-4. Tus procesos más repetitivos
-5. Tus objetivos
-6. Si quieres uno o varios agentes especializados
-7. Cómo se va a llamar tu agente y qué personalidad tendrá
+1. **Un par de preguntas básicas:** tu nombre, a qué te dedicas, qué quieres conseguir y cómo se va a llamar tu agente. Nada más.
+2. **Tus materiales, si los tienes:** web, documentos de marca, procesos escritos... El agente los lee y aprende solo, en vez de preguntártelo todo. Si no tienes nada a mano, no pasa nada.
+3. **Eliges tu primer flujo de trabajo:** el agente te propone 4-6 cosas concretas que puede hacer ya por ti, adaptadas a tu caso. Eliges una y la deja funcionando.
 
-Al terminar, habrá creado y rellenado automáticamente todos los archivos de configuración.
+El resto de información (herramientas, procesos, equipo, objetivos a largo plazo) el agente la irá aprendiendo poco a poco mientras trabajáis: alguna pregunta corta de vez en cuando, justo cuando le haga falta. Nunca un cuestionario.
 
 ---
 

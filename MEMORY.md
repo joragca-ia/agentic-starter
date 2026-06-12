@@ -13,6 +13,14 @@
 
 ---
 
+## Contexto pendiente de descubrir
+
+> Temas que el setup no preguntó a propósito. Se cubren poco a poco: máximo 1-2 preguntas por sesión, justo cuando hacen falta. Protocolo en `STARTUP.md`, sección "Descubrimiento progresivo". Tachar cada tema al cubrirlo.
+
+- [ ] [Se rellena en el Paso 5 del setup]
+
+---
+
 ## Archivos core (leer siempre al inicio)
 
 - [memory/user.md](memory/user.md) — perfil del usuario

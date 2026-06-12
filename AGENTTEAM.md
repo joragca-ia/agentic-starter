@@ -1,8 +1,7 @@
 # Equipo de agentes
 
 > Registro de todos los agentes del proyecto.
-> Se actualiza durante el setup inicial (STARTUP.md, Paso 6) y cuando se añaden nuevos agentes.
-> Para crear un agente nuevo, seguir las instrucciones en `agents/README.md`.
+> Se empieza con un solo agente. Los especializados se crean después, cuando un dominio crece lo suficiente (criterio y pasos en `agents/README.md`).
 
 ---
 
@@ -16,7 +15,7 @@
 
 ## Agentes especializados
 
-[Vacío hasta el setup inicial. Se rellenará en el Paso 6 de STARTUP.md si el usuario elige modelo multi-agente.]
+[Vacío al principio: el sistema arranca con un solo agente. Cuando un dominio acumule 3-4 directivas propias y las conversaciones se alarguen en ese tema, crear un especialista siguiendo `agents/README.md` y registrarlo aquí.]
 
 | Agente | Carpeta | Dominio | Cuándo delegar |
 |--------|---------|---------|----------------|

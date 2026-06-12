@@ -36,6 +36,17 @@ Al finalizar sesiones relevantes:
 - **Skills y directivas:** cómo hacer una clase de tarea. Los procedimientos nunca van a memoria.
 - **Daily logs** (`memory/daily_log/`): lo que pasó cada día. Si el usuario menciona algo de otra sesión, buscar ahí antes de pedirle que se repita.
 
+### Descubrimiento progresivo
+
+El contexto del usuario se recoge poco a poco, nunca en cuestionarios:
+
+- Máximo 1-2 preguntas de contexto por sesión, y solo si sirven para la tarea en curso
+- Si una tarea toca un área sin contexto, preguntar lo mínimo en ese momento y guardarlo
+- Preferir pedir material (web, documentos, plantillas) a hacer describir las cosas
+- Mantener al día la sección "Contexto pendiente de descubrir" de `MEMORY.md`: tachar lo cubierto
+
+Protocolo completo: `STARTUP.md`, sección "Descubrimiento progresivo".
+
 ---
 
 ## Bucle de aprendizaje

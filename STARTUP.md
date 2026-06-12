@@ -4,6 +4,13 @@
 > El agente lo ejecuta una sola vez, en la primera sesión.
 > Después actúa como referencia si se necesita reconfigurar algo.
 
+## Principios de diseño (leer antes de ejecutar)
+
+1. **Mínimas preguntas, valor temprano.** El setup completo dura menos de 10 minutos y termina con algo funcionando, no con un cuestionario respondido.
+2. **Documentos antes que interrogatorio.** Si el usuario tiene una web, documentos de marca o procesos escritos, leerlos vale más que veinte preguntas y cansa cero.
+3. **Un primer flujo funcionando > mil cosas configuradas.** El objetivo del setup es implementar UN flujo de trabajo útil, no mapear toda la empresa.
+4. **El resto se aprende poco a poco.** Todo lo que no se pregunta aquí se descubre progresivamente trabajando (ver "Descubrimiento progresivo" al final).
+
 ---
 
 ## Cuándo ejecutar este protocolo
@@ -22,227 +29,123 @@ Si el sistema ya está inicializado (`MEMORY.md` indica "Inicializado: Sí") y e
 
 ---
 
-### PASO 0 — Bienvenida
+### PASO 1 — Bienvenida + lo básico (un solo mensaje)
 
-Di al usuario exactamente esto (adaptando el idioma si ya sabes cuál usa):
+Abre con este mensaje (adaptando el idioma al del usuario):
 
-> "Hola. Soy tu agente de IA y voy a hacerte una serie de preguntas para configurar este sistema a tu medida.
+> "Hola. Soy tu agente de IA y voy a configurarme a tu medida. Solo necesito un par de cosas básicas; el resto lo iré aprendiendo sobre la marcha mientras trabajamos juntos:
 >
-> El proceso tarda entre 5 y 10 minutos. Puedes responder con la extensión que quieras: cuanto más cuentes, mejor puedo ayudarte.
->
-> ¿Empezamos?"
-
-Espera confirmación antes de continuar.
-
----
-
-### PASO 1 — Identidad del usuario
-
-Haz estas preguntas en un solo mensaje:
-
-> "Primero, cuéntame un poco sobre ti:
->
-> 1. ¿Cuál es tu nombre?
-> 2. ¿A qué te dedicas? (empresa, producto o servicio que ofreces, sector)
-> 3. ¿Cuál es tu rol? (fundador, CEO, freelance, responsable de marketing, etc.)
-> 4. ¿Cuántas personas hay en tu equipo? (si aplica)
-> 5. ¿Tienes clientes de empresa a empresa (B2B) o de empresa a consumidor final (B2C)? ¿Cómo es tu cliente tipo?"
-
-Cuando responda, rellena los campos de `memory/user.md` conservando la estructura completa del archivo:
-```
-# Usuario
-
-- **Nombre:** [nombre]
-- **Empresa / Actividad:** [empresa o descripción de actividad]
-- **Sector:** [sector]
-- **Rol:** [rol]
-- **Tamaño del equipo:** [número o descripción]
-- **Tipo de cliente:** [B2B / B2C / descripción del avatar]
-- **Zona horaria:** [detectar o dejar pendiente si no es deducible]
-- **Idioma preferido:** [detectar del idioma en que está respondiendo]
-
-## Contexto profesional
-
-[2-4 frases sobre su actividad, cómo trabaja, qué hace cada día, extraídas de sus respuestas]
-
-## Rol del agente en su trabajo
-
-[Cómo encaja el agente en su día a día. Si aún no está claro, completar tras el Paso 2]
-```
-
----
-
-### PASO 2 — Propósito del sistema
-
-Haz esta pregunta:
-
-> "Ahora cuéntame para qué quieres este sistema. Concretamente:
->
-> - ¿Qué problema principal quieres resolver?
-> - ¿Qué tareas del día a día te consumen más tiempo o son más tediosas?
-> - ¿Hay algo que quieras automatizar?
-> - ¿Qué debería poder hacer este agente que ahora haces tú manualmente?"
-
-Cuando responda, rellena estas secciones de `memory/objectives.md` (el archivo ya existe, no lo crees de nuevo; conserva las secciones restantes, que se completan en el Paso 5):
-
-- **Problema principal a resolver:** extraer de la respuesta
-- **Tareas candidatas a automatizar:** listar las mencionadas
-- **Primer objetivo medible:** extraer o proponer basándote en lo dicho
-
----
-
-### PASO 3 — Herramientas actuales
-
-Haz esta pregunta:
-
-> "¿Qué herramientas usas en tu trabajo diario? Por ejemplo:
->
-> - Gestión de tareas: Notion, ClickUp, Asana, Trello, Monday...
-> - Email: Gmail, Outlook, otro...
-> - Calendario: Google Calendar, Outlook Calendar, Apple Calendar...
-> - Base de datos o CRM de clientes...
-> - Almacenamiento: Google Drive, Dropbox, OneDrive...
-> - Comunicación interna: Slack, Teams, WhatsApp...
-> - Cualquier otra herramienta que uses cada semana"
-
-Cuando responda, actualiza `TOOLS.md` **conservando el resto del archivo** (la sección "Integraciones disponibles" es un catálogo de referencia, no la borres):
-
-1. Rellena la tabla "Herramientas activas" con una fila por herramienta:
-
-| Herramienta | Categoría | Para qué se usa | Integración |
-|-------------|-----------|-----------------|-------------|
-| [nombre]    | [tipo]    | [uso]           | Pendiente / Configurada |
-
-2. En "Notas de configuración", anota cualquier detalle relevante mencionado y qué integraciones convendría configurar primero.
-
----
-
-### PASO 4 — Procesos y flujos
-
-Haz esta pregunta:
-
-> "Describe tus 3 a 5 procesos más importantes o repetitivos. Por ejemplo:
->
-> - 'Cada semana publico contenido en redes y el proceso es...'
-> - 'Cuando llega un lead nuevo, hago esto...'
-> - 'Cada lunes reviso mis tareas así...'
-> - 'Cuando termino una reunión con un cliente, tardo X tiempo en hacer Y...'
->
-> No necesita ser perfecto ni completo. Descríbelos como se te ocurran."
-
-Cuando responda, identifica el proceso más claro y concreto. Crea una directiva de ejemplo en `directives/[nombre-proceso].md` usando el template de `directives/_template.md`.
-
-Dile al usuario qué directiva creaste y para qué proceso.
-
----
-
-### PASO 5 — Objetivos
-
-Haz esta pregunta:
-
-> "¿Cuáles son tus objetivos? Puedes ser tan concreto o vago como quieras:
->
-> - En los próximos 30 días, ¿qué quieres lograr?
-> - En los próximos 6 meses?
-> - ¿Hay métricas o números concretos que persigues? (ingresos, clientes, tiempo ahorrado, etc.)"
-
-Cuando responda, rellena las secciones restantes de `memory/objectives.md` (ya existen en el archivo, no las dupliques):
-
-- **Objetivos a 30 días:** extraer
-- **Objetivos a 6 meses:** extraer
-- **Métricas clave:** extraer si las mencionó
-
----
-
-### PASO 6 — Modelo de agentes
-
-Basándote en los procesos descritos en el Paso 4, propón una de estas opciones:
-
-**Opción A — Un solo agente (tú):**
-Apropiado si los procesos son pocos, el usuario trabaja solo, o las tareas son variadas y no tienen un dominio muy específico.
-
-**Opción B — Varios agentes especializados:**
-Apropiado si hay dominios claramente diferenciados. Propón roles concretos basados en lo que describió. Ejemplos:
-- Si mencionó contenido o redes sociales: "un agente de contenido"
-- Si mencionó ventas o clientes: "un agente de ventas / CRM"
-- Si mencionó operaciones o tareas internas: "un agente de operaciones"
-- Si mencionó desarrollo técnico: "un agente técnico"
-
-Presenta las dos opciones con una recomendación clara basada en lo que contó. Deja que el usuario decida.
-
-Si elige la Opción B, para cada agente propuesto:
-
-1. Copia `agents/_template/` a `agents/[rol]/` (rol en minúsculas, sin espacios: `agents/contenido/`, `agents/ventas/`)
-2. En los archivos copiados (`AGENT.md`, `IDENTITY.md`, `SOUL.md`, `MEMORY.md` y los de `memory/`), reemplaza "[AGENT_NAME]" por el nombre del agente y "[dominio]" por su dominio. Si el usuario no propone nombres, usa el rol como nombre (ej: "Contenido") y ofrécele cambiarlo después
-3. Completa las secciones del `AGENT.md` del agente con lo que sepas de los procesos descritos en el Paso 4 (responsabilidades, autonomía). Lo que no sepas, déjalo marcado como pendiente
-4. Registra el agente en `AGENTTEAM.md` (tabla "Agentes especializados")
-5. Añade una fila en la tabla "Delegación" de `AGENT.md` (raíz) indicando qué tareas se delegan a este agente
-
----
-
-### PASO 7 — Identidad del agente
-
-Haz esta pregunta:
-
-> "Por último, vamos a ponerle nombre y personalidad a tu agente.
->
-> - ¿Cómo quieres llamarle? (puede ser un nombre propio, un acrónimo, lo que quieras)
-> - ¿Qué tono quieres que tenga? (formal / informal, directo / conversacional, serio / con algo de humor)
-> - ¿Cómo describirías su personalidad en 3 palabras?"
+> 1. ¿Cómo te llamas?
+> 2. ¿A qué te dedicas? (empresa o actividad, sector, tu rol)
+> 3. ¿Qué quieres conseguir con este sistema? (el problema u objetivo principal — con una frase vale)
+> 4. ¿Qué nombre quieres ponerme? Y si quieres, dime qué tono prefieres: formal, directo, con algo de humor..."
 
 Cuando responda:
 
-1. Rellena `IDENTITY.md` con el nombre y descripción elegidos
-2. Rellena `SOUL.md` con los principios de personalidad extraídos de la respuesta
-3. En `AGENT.md`, reemplaza "[AGENT_NAME]" por el nombre elegido
-4. En `AGENTTEAM.md`, reemplaza "[AGENT_NAME]" en la tabla "Agente principal"
-5. Elimina o comenta la instrucción "Si IDENTITY.md contiene [AGENT_NAME]..." de `AGENT.md`
+1. Rellena en `memory/user.md` los campos que ya sepas (nombre, actividad, sector, rol, idioma detectado). Deja el resto con "—": se completará progresivamente.
+2. Rellena en `memory/objectives.md` la sección "Problema principal a resolver". Deja el resto: se completará progresivamente.
+3. Rellena `IDENTITY.md` con el nombre elegido y `SOUL.md` con el tono indicado (si no dio detalles de personalidad, usa los principios base del template).
+4. En `AGENT.md`, reemplaza "[AGENT_NAME]" por el nombre elegido y elimina o comenta la instrucción "Si IDENTITY.md contiene [AGENT_NAME]...".
+5. En `AGENTTEAM.md`, reemplaza "[AGENT_NAME]" en la tabla "Agente principal".
+6. Anota en `memory/preferences.md` el idioma y el tono detectados.
 
 ---
 
-### PASO 8 — Preferencias de trabajo
+### PASO 2 — Materiales existentes (antes de preguntar nada más)
 
-Sin hacer preguntas adicionales, rellena `memory/preferences.md` con lo que hayas aprendido durante la conversación:
-- Idioma detectado
-- Tono preferido (formal / informal)
-- Cualquier preferencia mencionada explícitamente
-- Horarios si los mencionó
-- Cualquier dato de estilo de trabajo
+Pregunta:
+
+> "Perfecto, [nombre]. Antes de hacerte más preguntas: ¿tienes material donde yo pueda leer sobre tu negocio por mi cuenta? Por ejemplo:
+>
+> - Tu web (pásame la URL)
+> - Documentos de marca, presentaciones o propuestas
+> - Procesos escritos, manuales, plantillas que uses
+> - Cualquier archivo que me dé contexto
+>
+> Puedes arrastrar archivos aquí mismo o pegarme enlaces. Cuanto más me des, menos te tendré que preguntar. Y si no tienes nada a mano, no pasa nada: seguimos sin ello."
+
+**Si entrega material:**
+1. Léelo todo antes de continuar.
+2. Extrae y guarda en los archivos correspondientes: contexto profesional → `memory/user.md`; objetivos y métricas mencionados → `memory/objectives.md`; herramientas que aparezcan → tabla de `TOOLS.md`; clientes o colaboradores relevantes → `memory/people.md`; estilo de comunicación de la marca → `memory/preferences.md`.
+3. Confirma en 3-4 líneas qué entendiste de su negocio (sin volcar un resumen largo). Pídele que corrija si algo está mal.
+
+**Si no tiene nada:** continúa directamente al Paso 3, sin insistir.
 
 ---
 
-### PASO 9 — Cierre y resumen
+### PASO 3 — Menú: elegir el primer flujo de trabajo
 
-Antes de presentar el resumen, actualiza `MEMORY.md`, sección "Estado del sistema":
+Con lo aprendido en los Pasos 1 y 2, propón entre 4 y 6 cosas concretas que podrías hacer por él desde ya, **adaptadas a su caso** (no genéricas). Formato:
 
-- **Inicializado:** Sí — [fecha de hoy]
-- **Última actualización:** [fecha de hoy]
+> "Con lo que sé hasta ahora, esto es lo que creo que más te serviría:
+>
+> 1. [Opción adaptada a su negocio — ej: "Redactar las propuestas para tus clientes a partir de tus notas"]
+> 2. [Opción — ej: "Procesar los emails y prepararte borradores de respuesta"]
+> 3. [Opción — ej: "Resumir tus reuniones y sacar las tareas pendientes"]
+> 4. [Opción — ej: "Documentar tus procesos para delegarlos o automatizarlos"]
+> 5. [Opción — ej: "Preparar contenido para tus redes a partir de tu material"]
+>
+> Puedo hacer todas estas cosas y más — estas me han parecido las más útiles para tu caso concreto. ¿Por cuál empezamos? Y si necesitas algo que no está en la lista, pídemelo y vemos cómo montarlo."
 
-Esto es obligatorio: si no se hace, el sistema intentará volver a ejecutar este protocolo en la próxima sesión.
+Pautas para generar buenas opciones:
+- Partir del objetivo del Paso 1 y del material del Paso 2: las opciones deben sonar a SU negocio, con sus palabras.
+- Priorizar tareas frecuentes y tediosas (las que ahorran tiempo cada semana) sobre proyectos grandes.
+- Cada opción en una línea, en lenguaje de resultado ("prepararte X", "ahorrarte Y"), no de tecnología.
 
-Después presenta al usuario este resumen:
+---
 
-> "Listo. Aquí está lo que he configurado:
+### PASO 4 — Implementar el primer flujo
+
+Con la opción elegida:
+
+1. Haz **solo las 2-3 preguntas mínimas** necesarias para ese flujo concreto (cómo lo hace hoy, qué formato quiere, algún ejemplo real si lo tiene). Nada de preguntas que no sirvan para este flujo.
+2. Crea la directiva del proceso en `directives/[nombre-flujo].md` usando `directives/_template.md`.
+3. Si el flujo necesita una herramienta externa (email, calendario...), anótala en `TOOLS.md` y explícale en 2 líneas cómo conectarla. Si la conexión no es inmediata, diseña el flujo para que funcione ya con lo disponible (ej: con material pegado en el chat) y deja la integración como mejora.
+4. **Ejecuta el flujo una primera vez** con un caso real del usuario, o déjalo listo y pídele el primer caso real.
+
+Este es el momento clave del setup: el usuario tiene que ver algo útil funcionando hoy, no una promesa.
+
+---
+
+### PASO 5 — Cierre
+
+1. **Obligatorio:** actualiza `MEMORY.md`, sección "Estado del sistema":
+   - **Inicializado:** Sí — [fecha de hoy]
+   - **Última actualización:** [fecha de hoy]
+   Si no se hace, el sistema intentará volver a ejecutar este protocolo en la próxima sesión.
+
+2. **Obligatorio:** rellena en `MEMORY.md` la sección "Contexto pendiente de descubrir" con los temas que NO se preguntaron, para irlos cubriendo poco a poco (ver lista en "Descubrimiento progresivo").
+
+3. Cierra con un resumen corto (nada de listas largas de archivos):
+
+> "Listo. Soy [nombre] y tu primer flujo de trabajo ya está montado: [flujo].
 >
-> **Tu agente:** [nombre]
+> Una cosa importante: no te he preguntado todo a propósito. Iré aprendiendo de ti poco a poco mientras trabajamos — de vez en cuando te haré alguna pregunta corta cuando me falte contexto, y cada cosa que me corrijas la guardo para no repetirla. Si en cualquier momento tienes documentos, webs o procesos que pasarme, mándamelos y los digiero.
 >
-> **Archivos configurados:**
-> - `memory/user.md` — tu perfil
-> - `memory/objectives.md` — tus objetivos
-> - `memory/preferences.md` — tus preferencias de trabajo
-> - `TOOLS.md` — tus herramientas
-> - `directives/[nombre].md` — tu primer proceso documentado
-> - `IDENTITY.md` y `SOUL.md` — identidad del agente
-> - `AGENTTEAM.md` y `agents/` — tu equipo de agentes [incluir solo si se eligió la Opción B en el Paso 6]
->
-> **Siguientes pasos sugeridos:**
-> 1. [Proponer basándote en los procesos descritos — ej: "Documentar el proceso de X como directiva"]
-> 2. [Proponer basándote en las herramientas — ej: "Configurar la integración con Gmail"]
-> 3. [Proponer basándote en los objetivos — ej: "Crear el primer skill para automatizar Y"]
->
-> **Una cosa más:** este sistema aprende con el uso. Cada vez que me corrijas, descubramos una solución o repitamos un proceso, lo capturo en mis skills y mi memoria para que la próxima vez salga mejor a la primera. Corregirme no es molestarme: es la forma más rápida de entrenarme.
->
-> ¿Hay algo que quieras ajustar o añadir antes de empezar a trabajar?"
+> ¿Probamos el flujo con un caso real?"
+
+---
+
+## Descubrimiento progresivo (después del setup)
+
+La información que el setup ya no pregunta se recoge así, repartida en el tiempo:
+
+### Reglas
+
+1. **Máximo 1-2 preguntas de contexto por sesión**, y solo si son relevantes para la tarea en curso. Nunca un bloque de preguntas seguidas.
+2. **Preguntar justo cuando hace falta.** Si una tarea toca un área sin contexto (una persona desconocida, una herramienta no registrada, un objetivo sin definir), preguntar lo mínimo en ese momento y guardarlo. El contexto pedido con motivo no frustra; el cuestionario sí.
+3. **Capturar sin preguntar siempre que se pueda.** La mayoría del contexto sale solo en las conversaciones de trabajo: preferencias, personas, herramientas, procesos. Guardarlo al vuelo (ver `AGENT.md`, "Bucle de aprendizaje").
+4. **Pedir material, no respuestas.** Si el usuario menciona una web, documento o plantilla que existe, pedírselo en vez de hacerle describirlo.
+5. **Tachar de la lista.** Cada vez que se cubra un tema, actualizar "Contexto pendiente de descubrir" en `MEMORY.md`.
+
+### Temas pendientes típicos (la lista inicial del Paso 5.2)
+
+- Herramientas que usa cada semana (completar `TOOLS.md`)
+- Sus 2-3 procesos más repetitivos (candidatos a directivas nuevas)
+- Objetivos a 30 días y 6 meses + métricas (`memory/objectives.md`)
+- Equipo, clientes y colaboradores clave (`memory/people.md`)
+- Horarios y forma de trabajar (`memory/preferences.md`)
+- Si algún dominio crece mucho: ¿conviene un agente especializado? (criterio en `agents/README.md`)
 
 ---
 
@@ -251,4 +154,4 @@ Después presenta al usuario este resumen:
 Una vez completado el setup, el agente opera con normalidad:
 - Lee `memory/user.md` + `memory/preferences.md` + `MEMORY.md` al inicio de cada sesión
 - No vuelve a preguntar información ya capturada
-- Actualiza la memoria cuando aprende algo nuevo del usuario o del proyecto
+- Aplica el descubrimiento progresivo y el bucle de aprendizaje de `AGENT.md`

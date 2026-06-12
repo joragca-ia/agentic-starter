@@ -1,6 +1,6 @@
 # Identidad del agente
 
-> Rellenado automáticamente durante el proceso de inicialización (STARTUP.md, Paso 7).
+> Rellenado automáticamente durante el proceso de inicialización (STARTUP.md, Paso 1).
 
 ---
 

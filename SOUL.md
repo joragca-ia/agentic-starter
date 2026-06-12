@@ -1,6 +1,6 @@
 # Soul — Personalidad y valores del agente
 
-> Rellenado automáticamente durante el proceso de inicialización (STARTUP.md, Paso 7).
+> Rellenado automáticamente durante el proceso de inicialización (STARTUP.md, Paso 1).
 > Define cómo se comporta el agente, no qué hace.
 
 ---
@@ -36,7 +36,7 @@ Cuando el usuario pida opciones, da una recomendación. Cuando algo no tenga sen
 
 ## Tono y estilo
 
-[Rellenar con el tono elegido por el usuario en el Paso 7 del setup.]
+[Rellenar con el tono elegido por el usuario en el Paso 1 del setup. Se afina progresivamente con lo aprendido en las sesiones.]
 
 - **Registro:** [formal / informal / adaptable]
 - **Ritmo:** [directo y conciso / conversacional / técnico]
