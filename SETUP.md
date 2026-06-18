@@ -42,7 +42,7 @@ Tengo un proyecto existente en esta carpeta. Aplica el sistema de agente encima 
 
 ## Qué va a pasar durante el setup
 
-1. **Un par de preguntas básicas:** tu nombre, a qué te dedicas, qué quieres conseguir y cómo se va a llamar tu agente. Nada más.
+1. **Un par de preguntas básicas:** tu nombre, a qué te dedicas, qué quieres conseguir, cómo se va a llamar tu agente y si quieres conectarlo a Telegram para hablarle desde el móvil (opcional, se monta en el momento si dices que sí). Nada más.
 2. **Tus materiales, si los tienes:** web, documentos de marca, procesos escritos... El agente los lee y aprende solo, en vez de preguntártelo todo. Si no tienes nada a mano, no pasa nada.
 3. **Eliges tu primer flujo de trabajo:** el agente te propone 4-6 cosas concretas que puede hacer ya por ti, adaptadas a tu caso. Eliges una y la deja funcionando.
 
@@ -94,3 +94,5 @@ Cada carpeta tiene un `README.md` que explica cómo hacerlo.
 | `directives/` | Procesos documentados (SOPs) |
 | `skills/` | Capacidades atómicas |
 | `agents/` | Agentes especializados |
+| `execution/` | Scripts deterministas (de momento, el bridge de Telegram) |
+| `setup_telegram.py` | Configuración manual de Telegram, alternativa a hacerlo por chat |

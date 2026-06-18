@@ -29,7 +29,11 @@ Catálogo de referencia: integraciones habituales que se pueden conectar según 
 - **Calendario:** Google Calendar (conector oficial)
 - **Almacenamiento:** Google Drive (conector oficial), Dropbox / OneDrive (MCP)
 - **Tareas y proyectos:** Notion, ClickUp, Asana, Trello (MCP con API key)
-- **Comunicación:** Slack (MCP con API key)
+- **Comunicación:** Slack (MCP con API key), **Telegram** (script propio incluido en la plantilla, sin API key de terceros — ver más abajo)
+
+### Telegram: hablar con el agente desde el móvil
+
+A diferencia de las demás integraciones, Telegram no necesita un MCP externo: la plantilla incluye su propio script (`execution/telegram_bridge.py`). Para conectarlo, pide "conecta Telegram" o sigue `skills/comunicacion/conectar-telegram/SKILL.md`. Se ofrece automáticamente durante el setup inicial (`STARTUP.md`, Paso 1).
 
 ---
 

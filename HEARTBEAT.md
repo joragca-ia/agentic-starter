@@ -8,16 +8,16 @@
 
 ## Cómo funciona
 
-**Importante:** el agente solo está activo cuando hay una sesión abierta. No hay un proceso en segundo plano que ejecute tareas a una hora exacta. El agente comprueba este archivo al inicio de cada sesión (ver `AGENT.md`, sección "Memoria") y ejecuta las tareas cuyo trigger aplique y no se hayan ejecutado ya.
+**Sin Telegram conectado:** el agente solo está activo cuando hay una sesión abierta. No hay un proceso en segundo plano que ejecute tareas a una hora exacta. El agente comprueba este archivo al inicio de cada sesión (ver `AGENT.md`, sección "Memoria") y ejecuta las tareas cuyo trigger aplique y no se hayan ejecutado ya.
+
+**Con Telegram conectado** (`skills/comunicacion/conectar-telegram/SKILL.md`): el bridge (`execution/telegram_bridge.py`) sí mantiene un proceso en segundo plano, y comprueba este archivo cada 30 minutos aunque no haya ninguna sesión de chat abierta. Si una tarea tiene algo que reportar, el agente lo envía por Telegram. Es la forma de tener ejecución a horas exactas sin depender de que alguien tenga el chat abierto.
 
 Cada tarea tiene un trigger (cuándo se activa), los pasos a ejecutar y un flag opcional para evitar duplicados.
 
 El trigger puede ser:
-- **Periódico:** "una vez al día", "los lunes" — se ejecuta en la primera sesión que se abra dentro del periodo
+- **Periódico:** "una vez al día", "los lunes" — se ejecuta en la primera sesión que se abra dentro del periodo, o en el primer chequeo del bridge de Telegram si está conectado
 - **Evento:** "al iniciar sesión", "al cerrar sesión"
 - **Manual:** "cuando el usuario diga X"
-
-> Si se necesita ejecución a horas exactas sin sesión abierta, hace falta un automatismo externo (un programador de tareas que abra la sesión). Es una ampliación avanzada, fuera del alcance de esta plantilla.
 
 El flag de deduplicación evita que la tarea se ejecute dos veces el mismo día si el sistema se reinicia:
 - Antes de ejecutar, comprobar si existe `.tmp/[nombre]_YYYY-MM-DD.done`

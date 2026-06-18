@@ -38,7 +38,8 @@ Abre con este mensaje (adaptando el idioma al del usuario):
 > 1. ¿Cómo te llamas?
 > 2. ¿A qué te dedicas? (empresa o actividad, sector, tu rol)
 > 3. ¿Qué quieres conseguir con este sistema? (el problema u objetivo principal — con una frase vale)
-> 4. ¿Qué nombre quieres ponerme? Y si quieres, dime qué tono prefieres: formal, directo, con algo de humor..."
+> 4. ¿Qué nombre quieres ponerme? Y si quieres, dime qué tono prefieres: formal, directo, con algo de humor...
+> 5. ¿Quieres que te conecte con Telegram, para poder hablarme desde el móvil además de aquí? Es opcional y se hace en 2 minutos ahora mismo si quieres."
 
 Cuando responda:
 
@@ -48,6 +49,7 @@ Cuando responda:
 4. En `AGENT.md`, reemplaza "[AGENT_NAME]" por el nombre elegido y elimina o comenta la instrucción "Si IDENTITY.md contiene [AGENT_NAME]...".
 5. En `AGENTTEAM.md`, reemplaza "[AGENT_NAME]" en la tabla "Agente principal".
 6. Anota en `memory/preferences.md` el idioma y el tono detectados.
+7. Si respondió que sí a la pregunta de Telegram: sigue ahora el protocolo completo de `skills/comunicacion/conectar-telegram/SKILL.md` antes de pasar al Paso 2. Si dijo que no o lo deja para más adelante, anótalo en "Contexto pendiente de descubrir" de `MEMORY.md` (puede pedirlo en cualquier momento más adelante diciendo "conecta Telegram") y continúa directamente.
 
 ---
 
@@ -124,6 +126,8 @@ Este es el momento clave del setup: el usuario tiene que ver algo útil funciona
 >
 > ¿Probamos el flujo con un caso real?"
 
+4. Si en el Paso 1 no conectó Telegram, añade una frase corta al cierre (no antes, para no interrumpir el setup): "Por cierto, si más adelante quieres hablarme desde el móvil por Telegram, solo dime 'conecta Telegram' y lo montamos en 2 minutos."
+
 ---
 
 ## Descubrimiento progresivo (después del setup)
@@ -140,6 +144,7 @@ La información que el setup ya no pregunta se recoge así, repartida en el tiem
 
 ### Temas pendientes típicos (la lista inicial del Paso 5.2)
 
+- Conexión a Telegram, si no se hizo en el Paso 1 (skill `conectar-telegram`)
 - Herramientas que usa cada semana (completar `TOOLS.md`)
 - Sus 2-3 procesos más repetitivos (candidatos a directivas nuevas)
 - Objetivos a 30 días y 6 meses + métricas (`memory/objectives.md`)

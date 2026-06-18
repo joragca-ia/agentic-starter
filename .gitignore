@@ -1,0 +1,10 @@
+# Secretos y estado local — nunca subir
+.env
+.tmp/
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log

@@ -7,7 +7,7 @@
 
 | Skill | Categoría | Qué hace | Invocar con |
 |-------|-----------|----------|-------------|
-| — | — | — | — |
+| [conectar-telegram](comunicacion/conectar-telegram/SKILL.md) | comunicacion | Conecta el agente a Telegram: crea el bot, valida la conexión y deja el bridge arrancando solo | `[SKILL:conectar-telegram]` o "conecta Telegram" |
 
 ---
 
