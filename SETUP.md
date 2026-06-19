@@ -42,9 +42,10 @@ Tengo un proyecto existente en esta carpeta. Aplica el sistema de agente encima 
 
 ## Qué va a pasar durante el setup
 
-1. **Un par de preguntas básicas:** tu nombre, a qué te dedicas, qué quieres conseguir, cómo se va a llamar tu agente y si quieres conectarlo a Telegram para hablarle desde el móvil (opcional, se monta en el momento si dices que sí). Nada más.
+1. **Un par de preguntas básicas:** tu nombre, a qué te dedicas, qué quieres conseguir y cómo se va a llamar tu agente. Nada más.
 2. **Tus materiales, si los tienes:** web, documentos de marca, procesos escritos... El agente los lee y aprende solo, en vez de preguntártelo todo. Si no tienes nada a mano, no pasa nada.
 3. **Eliges tu primer flujo de trabajo:** el agente te propone 4-6 cosas concretas que puede hacer ya por ti, adaptadas a tu caso. Eliges una y la deja funcionando.
+4. **Al cerrar, te pregunta si quieres conectarlo a Telegram** para hablarle desde el móvil además de aquí (opcional, se monta en el momento si dices que sí).
 
 El resto de información (herramientas, procesos, equipo, objetivos a largo plazo) el agente la irá aprendiendo poco a poco mientras trabajáis: alguna pregunta corta de vez en cuando, justo cuando le haga falta. Nunca un cuestionario.
 

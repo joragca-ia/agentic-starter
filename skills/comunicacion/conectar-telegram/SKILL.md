@@ -96,6 +96,10 @@ Confirma con el usuario que le ha llegado a Telegram antes de seguir.
 
 ### 5. Arrancar el bridge ahora
 
+Antes de arrancarlo, avisa en una frase de qué implica (no lo des por sentado, decídelo explícito el usuario):
+
+> "Una cosa antes de arrancarlo: como nadie está mirando la pantalla cuando te escribo por Telegram, el bridge corre con permisos completos para poder actuar sin pedirte confirmaciones de terminal que no verías. Sigo respetando las reglas de cuándo confirmar contigo antes de actuar (envíos, pagos, cosas irreversibles), eso no cambia. ¿Seguimos?"
+
 Arráncalo en segundo plano para que funcione ya mismo en esta sesión:
 
 ```bash
